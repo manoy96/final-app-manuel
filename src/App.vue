@@ -1,12 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+      <main-header></main-header>
     <router-view/>
+    <h1>built in directives</h1>
+    <p v-text="'some Text'"></p>
+    <p v-html="'<strong>Some strong text</strong>'"></p>
+
+    <h1>Custom directives</h1>
+    <p v-highlight:background.delayed="'green'">Color this</p>
+
   </div>
 </template>
+
+<script>
+import Header from './components/Header.vue'
+
+export default {
+    name: 'app',
+    components: {
+      'main-header': Header,
+    }
+}
+</script>
+
+
 
 <style>
 #app {
@@ -22,10 +39,13 @@
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #ffffff;
 }
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+p {
+  font-size: 300%;
 }
 </style>
