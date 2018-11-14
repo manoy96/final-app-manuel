@@ -8,7 +8,6 @@
         <router-link to="/login">Login</router-link>
       </div>
     </v-toolbar>
-    <router-view/>
   </v-app>
 </div> 
 </template>
