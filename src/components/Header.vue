@@ -1,7 +1,6 @@
 <template>
-<div>
   <v-app>
-    <v-toolbar color="blue" dark app clipped-left>
+    <v-toolbar color="blue" app clipped-left>
       <div id="nav">
         <router-link to="/">Home</router-link> |
         <router-link to="/about">About</router-link> |
@@ -9,7 +8,6 @@
       </div>
     </v-toolbar>
   </v-app>
-</div> 
 </template>
 
 <script>
