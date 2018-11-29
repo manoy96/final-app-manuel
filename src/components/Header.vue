@@ -1,6 +1,7 @@
 <template>
   <div class="header">
-    <v-toolbar color="blue" app clipped-left>
+    <v-toolbar color="blue-grey darken-2" app clipped-left>
+      <v-toolbar-title ></v-toolbar-title>
       <div id="nav">
         <router-link to="/">Home</router-link> |
         <router-link to="/about">About</router-link> |
