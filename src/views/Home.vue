@@ -5,39 +5,12 @@
           
           <v-flex lg3>
             <v-card color="blue-grey darken-2" class="white--text">
-              <v-layout>
+              <v-layout column justify-space-around>
                 <v-flex xs5>
                   <v-img
                     src="https://cdn.vuetifyjs.com/images/cards/foster.jpg"
                     aspect-ratio="1"
                     height="400"
-                    contain
-                  ></v-img>
-                </v-flex>
-                <!-- <v-flex xs7>
-                  <v-card-title primary-title>TITLE
-                    <div>
-                      <div class="headline">Supermodel</div>
-                      <div>Foster the People</div>
-                      <div>(2014)</div>
-                    </div>
-                  </v-card-title>
-                </v-flex> -->
-              </v-layout>
-              <v-divider light></v-divider>
-              <v-card-actions class="pa-3">
-                <v-btn dark color="blue-grey darken-3">Go</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-
-          <v-flex lg3>
-            <v-card color="blue-grey darken-2" class="white--text">
-              <v-layout>
-                <v-flex xs5>
-                  <v-img
-                    src="https://cdn.vuetifyjs.com/images/cards/foster.jpg"
-                    height="125px"
                     contain
                   ></v-img>
                 </v-flex>
@@ -64,7 +37,36 @@
                 <v-flex xs5>
                   <v-img
                     src="https://cdn.vuetifyjs.com/images/cards/foster.jpg"
-                    height="125px"
+                    aspect-ratio="1"
+                    height="400"
+                    contain
+                  ></v-img>
+                </v-flex>
+                <v-flex xs7>
+                  <v-card-title primary-title>TITLE
+                    <!-- <div>
+                      <div class="headline">Supermodel</div>
+                      <div>Foster the People</div>
+                      <div>(2014)</div>
+                    </div> -->
+                  </v-card-title>
+                </v-flex>
+              </v-layout>
+              <v-divider light></v-divider>
+              <v-card-actions class="pa-3">
+                <v-btn dark color="blue-grey darken-3">Go</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-flex>
+
+          <v-flex lg3>
+            <v-card color="blue-grey darken-2" class="white--text">
+              <v-layout>
+                <v-flex xs5>
+                  <v-img
+                    src="https://cdn.vuetifyjs.com/images/cards/foster.jpg"
+                    aspect-ratio="1"
+                    height="400"
                     contain
                   ></v-img>
                 </v-flex>
