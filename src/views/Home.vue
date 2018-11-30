@@ -2,20 +2,19 @@
   <v-app>
      
 <v-layout align-start justify-space-around row fill-height>
-          
           <v-flex lg3>
             <v-card color="blue-grey darken-2" class="white--text pa-4" >
               <v-layout column justify-space-around>
                 <v-flex xs5>
                   <v-img
-                    src="https://cdn.vuetifyjs.com/images/cards/foster.jpg"
+                    :src="info.data.amiibo[1].image"
                     aspect-ratio="1"
                     height="400"
                     contain
                   ></v-img>
                 </v-flex>
-                <v-flex xs7>
-                  <v-card-title primary-title>TITLE
+                <v-flex align-self-center xs7>
+                  <v-card-title primary-title>{{ info.data.amiibo[1].gameSeries | allCaps }}
                     <!-- <div>
                       <div class="headline">Supermodel</div>
                       <div>Foster the People</div>
@@ -32,18 +31,18 @@
           </v-flex>
 
           <v-flex lg3>
-            <v-card color="blue-grey darken-2" class="white--text">
-              <v-layout>
+            <v-card color="blue-grey darken-2" class="white--text pa-4" >
+              <v-layout column justify-space-around>
                 <v-flex xs5>
                   <v-img
-                    src="https://cdn.vuetifyjs.com/images/cards/foster.jpg"
+                    :src="info.data.amiibo[44].image"
                     aspect-ratio="1"
                     height="400"
                     contain
                   ></v-img>
                 </v-flex>
-                <v-flex xs7>
-                  <v-card-title primary-title>TITLE
+                <v-flex align-self-center xs7>
+                  <v-card-title primary-title>{{ info.data.amiibo[44].gameSeries | allCaps }}
                     <!-- <div>
                       <div class="headline">Supermodel</div>
                       <div>Foster the People</div>
@@ -60,18 +59,18 @@
           </v-flex>
 
           <v-flex lg3>
-            <v-card color="blue-grey darken-2" class="white--text">
-              <v-layout>
+            <v-card color="blue-grey darken-2" class="white--text pa-4" >
+              <v-layout column justify-space-around>
                 <v-flex xs5>
                   <v-img
-                    src="https://cdn.vuetifyjs.com/images/cards/foster.jpg"
+                    :src="info.data.amiibo[120].image"
                     aspect-ratio="1"
                     height="400"
                     contain
                   ></v-img>
                 </v-flex>
-                <v-flex xs7>
-                  <v-card-title primary-title>TITLE
+                <v-flex align-self-center xs7>
+                  <v-card-title primary-title>{{ info.data.amiibo[130].gameSeries | allCaps }}
                     <!-- <div>
                       <div class="headline">Supermodel</div>
                       <div>Foster the People</div>
@@ -87,6 +86,8 @@
             </v-card>
           </v-flex>
 
+          
+      
 </v-layout>
 
 
@@ -116,12 +117,29 @@
 
 <script>
 // @ is an alias to /src
+import axios from 'axios'
 
 export default {
   name: "home",
   components: {
 
-  }
+  },
+  data () {
+    return {
+      // info: [null]
+      info: []
+    }
+  },
+  mounted () {
+    axios
+      .get('http://www.amiiboapi.com/api/amiibo')
+      .then(response => (this.info = response))
+  },
+  filters: {
+    allCaps(value) {
+      return value.toUpperCase()
+    }
+  },
 };
 </script>
 

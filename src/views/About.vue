@@ -34,12 +34,12 @@
     </v-flex> -->
 
 
-
     <v-flex>
       <p>hello</p>
-      <p> {{ info.data.amiibo[9].character }} </p>
-      <v-img
-      :src="info.data.amiibo[1].image"></v-img>
+      <!-- <p> {{ info.data.amiibo[9].character }} </p> -->
+      <p> {{ info.data }} </p>
+      <!-- <v-img
+      :src="info.data.amiibo[1].image"></v-img> -->
       <!-- <ul>
       <li v-for="amiibo in allAmiibos" :key="amiibo.mario">
         {{ film.title }}
