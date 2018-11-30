@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <v-layout row>
-    <v-flex xs12 sm6 offset-sm3>
+    <!-- <v-flex xs12 sm6 offset-sm3>
       <v-card>
         <v-img
           src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
@@ -31,7 +31,50 @@
           </v-card-text>
         </v-slide-y-transition>
       </v-card>
+    </v-flex> -->
+
+
+
+    <v-flex>
+      <p>hello</p>
+      <p> {{ info.data.amiibo[9].character }} </p>
+      <v-img
+      :src="info.data.amiibo[1].image"></v-img>
+      <!-- <ul>
+      <li v-for="amiibo in allAmiibos" :key="amiibo.mario">
+        {{ film.title }}
+      </li>
+    </ul> -->
     </v-flex>
+
+
+
   </v-layout>
   </div>
 </template>
+
+<script>
+import axios from 'axios'
+
+export default {
+   data () {
+    return {
+      // info: [null]
+      info: []
+    }
+  },
+  mounted () {
+    axios
+      .get('http://www.amiiboapi.com/api/amiibo')
+      .then(response => (this.info = response))
+  },
+}
+</script>
+
+<style scoped>
+.about {
+  margin-top: 164px;
+}
+</style>
+
+

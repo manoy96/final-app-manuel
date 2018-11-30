@@ -4,7 +4,7 @@
 <v-layout align-start justify-space-around row fill-height>
           
           <v-flex lg3>
-            <v-card color="blue-grey darken-2" class="white--text">
+            <v-card color="blue-grey darken-2" class="white--text pa-4" >
               <v-layout column justify-space-around>
                 <v-flex xs5>
                   <v-img
