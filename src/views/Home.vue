@@ -2,19 +2,22 @@
   <v-app>
      
 <v-layout align-start justify-space-around row fill-height>
-          <v-flex lg3>
+  <v-btn @click="getData('zelda')">Click me</v-btn>
+  <v-btn @click="getData('mario')">Click me</v-btn>
+  
+          <v-flex v-for='(item, i) in info' :key="i" lg3>
             <v-card color="blue-grey darken-2" class="white--text pa-4" >
               <v-layout column justify-space-around>
                 <v-flex xs5>
                   <v-img
-                    :src="info.data.amiibo[1].image"
+                    :src="item.image"
                     aspect-ratio="1"
                     height="400"
                     contain
                   ></v-img>
                 </v-flex>
                 <v-flex align-self-center xs7>
-                  <v-card-title primary-title>{{ info.data.amiibo[1].gameSeries | allCaps }}
+                  <v-card-title primary-title>{{ item.gameSeries | allCaps }}
                     <!-- <div>
                       <div class="headline">Supermodel</div>
                       <div>Foster the People</div>
@@ -30,61 +33,7 @@
             </v-card>
           </v-flex>
 
-          <v-flex lg3>
-            <v-card color="blue-grey darken-2" class="white--text pa-4" >
-              <v-layout column justify-space-around>
-                <v-flex xs5>
-                  <v-img
-                    :src="info.data.amiibo[44].image"
-                    aspect-ratio="1"
-                    height="400"
-                    contain
-                  ></v-img>
-                </v-flex>
-                <v-flex align-self-center xs7>
-                  <v-card-title primary-title>{{ info.data.amiibo[44].gameSeries | allCaps }}
-                    <!-- <div>
-                      <div class="headline">Supermodel</div>
-                      <div>Foster the People</div>
-                      <div>(2014)</div>
-                    </div> -->
-                  </v-card-title>
-                </v-flex>
-              </v-layout>
-              <v-divider light></v-divider>
-              <v-card-actions class="pa-3">
-                <v-btn dark color="blue-grey darken-3">Go</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
 
-          <v-flex lg3>
-            <v-card color="blue-grey darken-2" class="white--text pa-4" >
-              <v-layout column justify-space-around>
-                <v-flex xs5>
-                  <v-img
-                    :src="info.data.amiibo[120].image"
-                    aspect-ratio="1"
-                    height="400"
-                    contain
-                  ></v-img>
-                </v-flex>
-                <v-flex align-self-center xs7>
-                  <v-card-title primary-title>{{ info.data.amiibo[130].gameSeries | allCaps }}
-                    <!-- <div>
-                      <div class="headline">Supermodel</div>
-                      <div>Foster the People</div>
-                      <div>(2014)</div>
-                    </div> -->
-                  </v-card-title>
-                </v-flex>
-              </v-layout>
-              <v-divider light></v-divider>
-              <v-card-actions class="pa-3">
-                <v-btn dark color="blue-grey darken-3">Go</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
 
           
       
@@ -127,20 +76,28 @@ export default {
   data () {
     return {
       // info: [null]
-      info: []
+      info: [],
+      ourQuery: 'zelda'
+      //ourQuery=<character>
     }
   },
-  mounted () {
-    axios
-      .get('http://www.amiiboapi.com/api/amiibo')
-      .then(response => (this.info = response))
+  methods: {
+    getData(myCharacter) {
+      this.ourQuery = myCharacter
+          axios
+      .get(`http://www.amiiboapi.com/api/amiibo/?character=${this.ourQuery}`)
+      .then(response => {
+        console.log(response.data.amiibo);
+        this.info = response.data.amiibo;
+      })
+  },
   },
   filters: {
     allCaps(value) {
       return value.toUpperCase()
     }
   },
-};
+}
 </script>
 
 <style scoped>
