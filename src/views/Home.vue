@@ -1,42 +1,50 @@
 <template>
   <v-app>
-     
-<v-layout align-start justify-space-around row fill-height>
-  <v-btn @click="getData('zelda')">Click me</v-btn>
-  <v-btn @click="getData('mario')">Click me</v-btn>
+
+
+
+
+<v-layout column justify-content-center align-content center>
+  <v-container>
+    <v-btn @click="getData('mario')">Click me</v-btn>
+    <v-btn @click="getData('link')">Click me</v-btn>
+    <v-btn @click="getData('samus')">Click me</v-btn>
+  </v-container>
   
-          <v-flex v-for='(item, i) in info' :key="i" lg3>
+  
+        
+          <v-container v-for='(item, i) in info' :key="i" lg3>
             <v-card color="blue-grey darken-2" class="white--text pa-4" >
-              <v-layout column justify-space-around>
-                <v-flex xs5>
+              <v-layout column justify-start align-content-start>
+                <v-flex align-self-center xs7>
+                  <h1>{{ item.name | allCaps }}</h1>
+                </v-flex>
+
+                <v-layout row align-center justify-center xs5 fill-height>
                   <v-img
                     :src="item.image"
                     aspect-ratio="1"
                     height="400"
                     contain
-                  ></v-img>
-                </v-flex>
-                <v-flex align-self-center xs7>
-                  <v-card-title primary-title>{{ item.gameSeries | allCaps }}
-                    <!-- <div>
-                      <div class="headline">Supermodel</div>
-                      <div>Foster the People</div>
-                      <div>(2014)</div>
-                    </div> -->
-                  </v-card-title>
-                </v-flex>
+                    fill-height>
+                  </v-img>
+                  <v-flex align-self-start> 
+                    <v-btn @click="showing = !showing" class="animated infinite flipOutY delay-2s">Info</v-btn>
+                    <transition name="flip" mode="out-in">
+                    <v-card v-if="showing" class="py-3">
+                      <p>Name: {{ item.name }} </p>
+                      <p>Game: {{ item.gameSeries }} </p>
+                      <p>Amiibo Series: {{ item.amiiboSeries }} </p>
+                      <p>Released: {{ item.release.na }} </p>
+                    </v-card>
+                    </transition>
+                  </v-flex>
+                </v-layout>
+                
               </v-layout>
-              <v-divider light></v-divider>
-              <v-card-actions class="pa-3">
-                <v-btn dark color="blue-grey darken-3">Go</v-btn>
-              </v-card-actions>
             </v-card>
-          </v-flex>
+          </v-container>
 
-
-
-          
-      
 </v-layout>
 
 
@@ -77,8 +85,9 @@ export default {
     return {
       // info: [null]
       info: [],
-      ourQuery: 'zelda'
+      ourQuery: 'zelda',
       //ourQuery=<character>
+      showing: true
     }
   },
   methods: {
@@ -103,6 +112,37 @@ export default {
 <style scoped>
 #app {
   margin-top: 164px;
+}
+#app p {
+  font-size: 2rem;
+}
+#app h1 {
+  font-size: 3rem;
+  font-weight: 200;
+}
+.flip-enter-active {
+  animation: flip-in 0.5s ease-out forwards
+}
+.flip-leave {
+}
+.flip-leave-active {
+  animation: flip-out 0.5s ease-out backwards
+}
+@keyframes flip-in {
+  from {
+    transform: rotateY(90deg)
+  }
+  to {
+    transform: rotateY(0deg)
+  }
+}
+@keyframes flip-out {
+  from {
+    transform: rotateY(0deg)
+  }
+  to {
+    transform: rotateY(90deg)
+  }
 }
 </style>
 
