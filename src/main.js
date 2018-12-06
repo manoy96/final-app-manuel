@@ -23,6 +23,7 @@ Vue.directive('highlight', {
   }
 });
 
+
 Vue.config.productionTip = false;
 
 new Vue({
