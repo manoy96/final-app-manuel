@@ -36,15 +36,9 @@
 
     <v-flex>
       <p>hello</p>
-      <!-- <p> {{ info.data.amiibo[9].character }} </p> -->
-      <p> {{ info.data }} </p>
-      <!-- <v-img
-      :src="info.data.amiibo[1].image"></v-img> -->
-      <!-- <ul>
-      <li v-for="amiibo in allAmiibos" :key="amiibo.mario">
-        {{ film.title }}
-      </li>
-    </ul> -->
+      <h2>Meet the OG</h2>
+      <!-- <v-image
+      :src="item[1].image"></v-image> -->
     </v-flex>
 
 
@@ -54,22 +48,42 @@
 </template>
 
 <script>
+// @ is an alias to /src
 import axios from 'axios'
 
 export default {
-   data () {
+  name: "home",
+  components: {
+
+  },
+  data () {
     return {
       // info: [null]
-      info: []
+      info: [],
+      ourQuery: 'zelda',
+      //ourQuery=<character>
+      showing: true
     }
   },
-  mounted () {
-    axios
-      .get('http://www.amiiboapi.com/api/amiibo')
-      .then(response => (this.info = response))
+  methods: {
+    getData(myCharacter) {
+      this.ourQuery = myCharacter
+          axios
+      .get(`http://www.amiiboapi.com/api/amiibo/?character=${this.ourQuery}`)
+      .then(response => {
+        console.log(response.data.amiibo);
+        this.info = response.data.amiibo;
+      })
+  },
+  },
+  filters: {
+    allCaps(value) {
+      return value.toUpperCase()
+    }
   },
 }
 </script>
+
 
 <style scoped>
 .about {

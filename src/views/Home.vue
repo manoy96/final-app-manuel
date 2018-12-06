@@ -1,18 +1,47 @@
 <template>
   <v-app>
 
+<v-layout>
+    <v-flex xs12 sm6 offset-sm3>
+      <v-card>
+        <v-img
+          class="white--text"
+          height="400px"
+          src="https://images-na.ssl-images-amazon.com/images/I/617mdF-0c0L.jpg"
+        >
+          <v-container fill-height fluid>
+            <v-layout fill-height>
+              <v-flex xs12 align-end flexbox>
+                <span class="headline">Top 10 Australian beaches</span>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-img>
+        <v-card-title>
+          <div>
+            <span class="grey--text">Number 10</span><br>
+            <span>Whitehaven Beach</span><br>
+            <span>Whitsunday Island, Whitsunday Islands</span>
+          </div>
+        </v-card-title>
+        <v-card-actions>
+          <v-btn flat color="orange">Share</v-btn>
+          <v-btn flat color="orange">Explore</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-flex>
+  </v-layout>
+
 
 
 
 <v-layout column justify-content-center align-content center>
   <v-container>
-    <v-btn @click="getData('mario')">Click me</v-btn>
-    <v-btn @click="getData('link')">Click me</v-btn>
-    <v-btn @click="getData('samus')">Click me</v-btn>
+    
+    <v-btn @click="getData('mario')" v-nintendo="10">Click me</v-btn>
+    <v-btn @click="getData('link')" v-nintendo="10">Click me</v-btn>
+    <v-btn @click="getData('samus')" v-nintendo="10">Click me</v-btn>
   </v-container>
-  
-  
-        
           <v-container v-for='(item, i) in info' :key="i" lg3>
             <v-card color="blue-grey darken-2" class="white--text pa-4" >
               <v-layout column justify-start align-content-start>
@@ -44,6 +73,7 @@
               </v-layout>
             </v-card>
           </v-container>
+        <p> {{ userName }} </p>
 
 </v-layout>
 

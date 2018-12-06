@@ -5,21 +5,10 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
-Vue.directive('highlight', {
+Vue.directive('nintendo', {
   bind(el, binding, vnode) {
-    // el.style.backgroundColor = 'green';
-    // el.style.backgroundColor = binding.value;
-    var delay = 0;
-    if (binding.modifiers['delayed']){
-      delay = 3000;
-    }
-    setTimeout(() => {
-      if (binding.arg == 'background') {
-        el.style.backgroundColor = binding.value;
-      } else {
-        el.style.color = binding.value;
-      }
-    }, delay);
+    el.style.backgroundColor = '#DD1F20';
+    el.style.borderRadius = binding.value + 'px'
   }
 });
 

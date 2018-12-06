@@ -37,7 +37,12 @@ export default {
     }, delay);
         }
       }
+    },
+    computed: {
+      userName() {
+      return this.$store.getters.userName;
     }
+    },
 }
 </script>
 
@@ -58,6 +63,7 @@ export default {
 #nav a {
   font-weight: bold;
   color: #ffffff;
+  text-decoration: none;
 }
 
 #nav a.router-link-exact-active {
