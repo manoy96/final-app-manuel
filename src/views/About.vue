@@ -37,6 +37,7 @@
     <v-flex>
       <p>hello</p>
       <h2>Meet the OG</h2>
+      
       <!-- <v-image
       :src="item[1].image"></v-image> -->
     </v-flex>

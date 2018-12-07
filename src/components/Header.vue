@@ -1,12 +1,13 @@
 <template>
   <div class="header">
     <v-toolbar color="blue-grey darken-2" app clipped-left>
-      <v-toolbar-title ></v-toolbar-title>
+      <v-toolbar-title >myPage</v-toolbar-title>
       <div id="nav">
         <router-link to="/">Home</router-link> |
         <router-link to="/about">About</router-link> |
         <router-link to="/login">Login</router-link>
       </div>
+      <p>{{ userName }}</p>
     </v-toolbar>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <v-app>
-
+    <p> Hello, {{ userName }} </p>
 <v-layout>
     <v-flex xs12 sm6 offset-sm3>
       <v-card>

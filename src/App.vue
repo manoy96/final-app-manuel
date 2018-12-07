@@ -2,13 +2,7 @@
   <div id="app">
       <main-header></main-header>
     <router-view/>
-    <!-- <h1>built in directives</h1>
-    <p v-text="'some Text'"></p>
-    <p v-html="'<strong>Some strong text</strong>'"></p>
-
-    <h1>Custom directives</h1>
-    <p v-highlight:background.delayed="'green'">Color this</p> -->
-
+    <p>{{ userName }}</p>
 
   </div>
 </template>
