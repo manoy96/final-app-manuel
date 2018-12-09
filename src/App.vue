@@ -2,14 +2,14 @@
   <div id="app">
       <main-header></main-header>
 
-<main class="App__main">
-      <transition
-        name="fade"
-        mode="out-in"
-      >
-        <router-view/>
-      </transition>
-    </main>
+  <main class="App__main">
+    <transition
+      name="fade"
+      mode="out-in"
+    >
+      <router-view/>
+    </transition>
+  </main>
 
     <p v-if="['home','about'].includes($route.name)" class="myUser">Hello, {{ userName }}</p>
     <app-user v-if="['about'].includes($route.name)"></app-user>
