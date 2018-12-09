@@ -7,7 +7,6 @@
         <router-link to="/about">About</router-link> |
         <router-link to="/login">Login</router-link>
       </div>
-      <p>{{ userName }}</p>
     </v-toolbar>
   </div>
 </template>

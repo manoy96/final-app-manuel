@@ -6,23 +6,18 @@
       <v-card>
         <v-img
           class="white--text"
-          height="400px"
-          src="https://images-na.ssl-images-amazon.com/images/I/617mdF-0c0L.jpg"
+          height="150px"
+          src="http://i.imgur.com/zJOu3ac.jpg"
         >
           <v-container fill-height fluid>
             <v-layout fill-height>
               <v-flex xs12 align-end flexbox>
-                <span class="headline">Top 10 Australian beaches</span>
+                <v-card-title primary-title>Link</v-card-title>
               </v-flex>
             </v-layout>
           </v-container>
         </v-img>
         <v-card-title>
-          <div>
-            <span class="grey--text">Number 10</span><br>
-            <span>Whitehaven Beach</span><br>
-            <span>Whitsunday Island, Whitsunday Islands</span>
-          </div>
         </v-card-title>
         <v-card-actions>
           <v-btn flat color="orange">Share</v-btn>
@@ -73,7 +68,7 @@
               </v-layout>
             </v-card>
           </v-container>
-        <p> {{ userName }} </p>
+        <!-- <p> {{ userName }} </p> -->
 
 </v-layout>
 
@@ -153,8 +148,6 @@ export default {
 .flip-enter-active {
   animation: flip-in 0.5s ease-out forwards
 }
-.flip-leave {
-}
 .flip-leave-active {
   animation: flip-out 0.5s ease-out backwards
 }
@@ -173,6 +166,9 @@ export default {
   to {
     transform: rotateY(90deg)
   }
+}
+span.headline {
+  color: #666;
 }
 </style>
 

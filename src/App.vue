@@ -2,18 +2,21 @@
   <div id="app">
       <main-header></main-header>
     <router-view/>
-    <p>{{ userName }}</p>
+    <p v-if="['home'].includes($route.name)">Hello, {{ userName }}</p>
+    <app-user v-if="['about'].includes($route.name)"></app-user>
 
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import User from './components/User.vue'
 
 export default {
     name: 'app',
     components: {
       'main-header': Header,
+      appUser: User,
     },
     directives: {
       'local-highlight': {
@@ -66,4 +69,5 @@ export default {
 p {
   font-size: 300%;
 }
+
 </style>
