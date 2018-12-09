@@ -1,5 +1,8 @@
 <template>
 <div class="login">
+  <v-layout justify-center>
+    <p>LOGIN</p>
+  </v-layout>
   <v-layout>
     <v-flex xs12 sm6 offset-sm3>
       <v-card hover class="pa-4">
@@ -28,10 +31,10 @@
               @click:append="show1 = !show1"
             ></v-text-field>
             <v-btn
-              color="pink lighten-2"  
+              v-nintendo="8"
+              dark
               :disabled="!valid"
               @click="onSubmit">submit</v-btn>
-            <v-btn @click="clear">clear</v-btn>
           </form>
       </v-card>
     </v-flex>

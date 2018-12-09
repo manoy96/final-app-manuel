@@ -1,8 +1,7 @@
 <template>
     <div class="component">
-        <h3>You may view the User Details here</h3>
-        <p>Many Details</p>
-        <p>User Name: {{ name }} </p>
+        <p>Learn about the different Amiibo facts</p>
+        <p>FACT: {{ name }} </p>
     </div>
 </template>
 
