@@ -1,6 +1,6 @@
 # final-app-manuel
 
-<!-- ## Project setup
+## Project setup
 ```
 npm install
 ```
@@ -22,7 +22,7 @@ npm run test
 
 ### Lints and fixes files
 ```
-npm run lint -->
+npm run lint
 ```
 
 ### My Project
