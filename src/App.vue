@@ -19,7 +19,7 @@
 
 <script>
 import Header from './components/Header.vue'
-import User from './components/User.vue'
+import User from './components/learn.vue'
 import Footer from './components/Footer.vue'
 
 export default {

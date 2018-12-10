@@ -5,22 +5,22 @@
         
         <div class="row">
             <div class="col-xs-12 col-sm-6">
-                <app-user-detail :name="name"></app-user-detail>
+                <app-Learn-detail :name="name"></app-Learn-detail>
             </div>
             <!-- <div class="col-xs-12 col-sm-6">
             </div> -->
         </div>
         <v-layout align-center column>
             <p>More Facts</p>
-            <button @click="changeName1" class="my-1">Link vs Mario</button>
-            <button @click="changeName2" class="my-1">Sales</button>
-            <button @click="changeName3" class="my-1">Gold Mario</button>
+            <button v-nintendo="8" @click="changeName1" class="my-1">Link vs Mario</button>
+            <button v-nintendo="8" @click="changeName2" class="my-1">Sales</button>
+            <button v-nintendo="8" @click="changeName3" class="my-1">Gold Mario</button>
         </v-layout>
     </div>
 </template>
 
 <script>
-    import UserDetail from './UserDetail.vue';
+    import learnDetail from './learnDetail.vue';
 
     export default {
         data: function() {
@@ -40,7 +40,7 @@
             },
         },
         components: {
-            appUserDetail: UserDetail,
+            appLearnDetail: learnDetail,
         },
     }
 </script>
