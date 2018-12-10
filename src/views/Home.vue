@@ -123,13 +123,13 @@
                     fill-height>
                   </v-img>
                   <v-flex align-self-start> 
-                    <v-btn @click="showing = !showing" class="animated infinite flipOutY delay-2s">Info</v-btn>
+                    <v-btn dark v-nintendo="8" @click="showing = !showing" class="animated infinite flipOutY delay-2s">Character Info</v-btn>
                     <transition name="flip" mode="out-in">
-                    <v-card v-if="showing" class="py-3">
-                      <p>Name: {{ item.name }} </p>
-                      <p>Game: {{ item.gameSeries }} </p>
-                      <p>Amiibo Series: {{ item.amiiboSeries }} </p>
-                      <p>Released: {{ item.release.na }} </p>
+                    <v-card v-nintendo="5" v-if="showing" class="py-3">
+                      <p class="amiibo">Name: {{ item.name }} </p>
+                      <p class="amiibo">Game: {{ item.gameSeries }} </p>
+                      <p class="amiibo">Amiibo Series: {{ item.amiiboSeries }} </p>
+                      <p class="amiibo">Released: {{ item.release.na }} </p>
                     </v-card>
                     </transition>
                   </v-flex>
@@ -200,8 +200,13 @@ export default {
   font-size: 3rem;
   font-weight: 200;
 }
+p.amiibo{
+  color: #fff;
+  background-color: #DD1F20;
+}
 .flip-enter-active {
-  animation: flip-in 0.5s ease-out forwards
+  animation: flip-in 0.5s ease-out forwards;
+  background-color: rgb(114, 141, 153);
 }
 .flip-leave-active {
   animation: flip-out 0.5s ease-out backwards
