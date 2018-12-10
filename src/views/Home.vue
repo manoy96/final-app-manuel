@@ -174,7 +174,7 @@ export default {
     getData(myCharacter) {
       this.ourQuery = myCharacter
           axios
-      .get(`https://cors-anywhere.herokuapp.com/http://www.amiiboapi.com/api/amiibo/?character=${this.ourQuery}`)
+      .get(`https://cors-anywhere.herokuapp.com/https://www.amiiboapi.com/api/amiibo/?character=${this.ourQuery}`)
       .then(response => {
         console.log(response.data.amiibo);
         this.info = response.data.amiibo;
