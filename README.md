@@ -1,6 +1,6 @@
 # final-app-manuel
 
-## Project setup
+<!-- ## Project setup
 ```
 npm install
 ```
@@ -22,12 +22,12 @@ npm run test
 
 ### Lints and fixes files
 ```
-npm run lint
+npm run lint -->
 ```
 
-### Customize configuration
+### My Project
 
-
+[See My Project](https://romantic-babbage-5d7960.netlify.com/#/)
 
 1. Effectively use conditional logic and JavaScript array methods to render large lists.
 
