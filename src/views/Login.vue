@@ -10,7 +10,7 @@
             <v-text-field
               v-model="username"
               :rules="nameRules"
-              :counter="10"
+              :counter="50"
               label="Name"
               required
             ></v-text-field>
@@ -53,7 +53,7 @@
         name: '',
         nameRules: [
           v => !!v || 'Name is required',
-          v => (v && v.length <= 10) || 'Name must be less than 10 characters'  
+          v => (v && v.length <= 50) || 'Name must be less than 50 characters'  
         ],
 
         email: '',

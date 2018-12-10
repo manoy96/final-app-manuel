@@ -1,30 +1,3 @@
-# final-app-manuel
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
 ### My Project
 
 [See My Project](https://romantic-babbage-5d7960.netlify.com/#/)
