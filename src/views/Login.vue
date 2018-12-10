@@ -1,7 +1,7 @@
 <template>
 <div class="login">
   <v-layout justify-center>
-    <p>LOGIN</p>
+    <p>Sign Up</p>
   </v-layout>
   <v-layout>
     <v-flex xs12 sm6 offset-sm3>
@@ -34,7 +34,7 @@
               v-nintendo="8"
               dark
               :disabled="!valid"
-              @click="onSubmit">submit</v-btn>
+              @click="onSubmit">Sign Up</v-btn>
           </form>
       </v-card>
     </v-flex>
